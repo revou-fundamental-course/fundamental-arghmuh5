@@ -1,2 +1,58 @@
-/*ini css/*
-/*ada perubahan*/
+/*ini css*/
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-icon {
+height: 100px;
+width: 100px;
+
+background-image: url(../assets/kraf.png);
+background-size: cover;
+border-radius: 50px;
+}
+
+nav>a{
+    padding-left: 32px;
+    padding-right: 32px;
+    border: 1px solid;
+}
+
+.banner-container{
+    height: 350px;
+    width: 100%;
+    border: 1px solid;
+}
+
+
+.profile-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-item{
+    text-align: center;
+}
+
+
+.profile-icon {
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    border-radius: 50px;
+    }
+
+.profile-1 {
+    background-image: url(../assets/icon5.png);
+}
+
+.profile-2 {
+    background-image: url(../assets/icon4.png);
+}
+
+.profile-3 {
+    background-image: url(../assets/kraf.png);
+}
