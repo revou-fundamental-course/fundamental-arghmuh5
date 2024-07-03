@@ -4,7 +4,6 @@
 <head>
 <title> Mini Project</title>
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -13,9 +12,9 @@
     <div class ="logo-icon"></div>
     
     <nav>
-        <a> Home</a>
-        <a href="#our-profile">our Profile</a>
-        <a> Message Us</a>
+        <a href="#peta" > <b> Peta Kota Bandung</b></a>
+        <a href="#tokoh"><b>Tokoh Kota Bandung </b></a>
+        <a href="#Contact-us" > <b> Kirim Pesan</b></a>
     </nav>
 </header>
 
@@ -25,53 +24,109 @@
  <main>
 <!-- ini home Content -->
 <section>
-    <header>
-        <h1> Hi User, Welcome to Website</h1>
+    <header class="home">
+    <h1> Hi <span id="name"> User</span> Selamat Datang Di Website Kota Bandung</h1>
+    <script src="js/script.js"></script>  
+   <div class="Bandung">
+    <p>Bandung bukan hanya sebuah kota yang menjadi rumah bagi jutaan warganya. Lebih dari itu, Bandung adalah kisah dan sejarah yang telah bergulir lebih dari dua abad silam. Sejak dahulu Bandung mahsyur akan kemolekannya. Kota yang dikelilingi pegunungan ini memang menyimpan berjuta keindahan alam. Tidak hanya itu, berbagai macam destinasi wisata menarik mulai dari tempat kuliner sampai tempat rekreasi bisa ditemukan di Kota Bandung. Selain dikenal sebagai Paris Van Java dan Kota Kembang, Bandung pun dijuluki The Most European City in The East Indies, Bandung Excelsior, Intelectuele Centrum Van Indie, Europe in The Tropen, Kota Permai, Kota Pendidkan, Kota Kreatif hingga Kota Kuliner. </p> </div>
+    <div class="banner-container">
+    <div class="banner-item" style="background-image: url(assets/merdeka.jpg)"></div>
+    </div>
     </header>
+<hr>
 
-    <article>
-        <p> ini adalah website portofolio</p>
 
-        <div class="banner-container"> </div>
-    </article>
-</section>
-
-<hr />
-
-<!-- ini Our Profile Content -->
- <section id="our-profile">
-    <header>
-        <h1> our Profile</h1>
+<!-- ini konten tokoh-->
+ <section id="tokoh">
+    <header class="tengah">
+        <h1> Tokoh Kota Bandung</h1>
+        <div class="tokoh">
+        <p>  Kota Bandung menjadi salah satu titik dalam perebutan kemerdekaan Indonesia. Berbagai aksi dilakukan masyarakat di kota ini untuk menggapai kemerdekaan tersebut, seperti Bandung Lautan Api.Di Kota Kembang ini lahir pula para pahlawan nasional yang saat ini dikenal masyarakat. Pemerintah bahkan menobatkan mereka sebagai pahlawan yang layak dikenang masyarakat.
+        Berikut tiga sosok pahlawan yang lahir di Kota Bandung:
+        </p>
     </header>
 
     <article class="profile-content">
         <div class="profile-item">
             <div class="profile-icon profile-1"></div>
-        <p> Profile 1</p>
+        <p> R. E. Martadinata</p>
         </div>
 
         <div class="profile-item">
             <div class="profile-icon profile-2"></div>
-        <p> Profile 2</p>
+        <p> Raden Dewi Sartika</p>
         </div>
 
         <div class="profile-item">
             <div class="profile-icon profile-3"></div>
-        <p> Profile 3</p>
+        <p> Otto Iskandardinata</p>
         </div>
     </article>
  </section>
 
+ <hr />
 
+<!-- leaflet map-->
+<section id="peta">
+<h1> Peta Kota Bandung</h1>
+<section id="Peta">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 
-<!-- ini portoflio content -->
+<div id="map" style="height: 500px;"></div>
+<script>
+    var map = L.map('map').setView([-6.913514930336866, 107.61820212368399], 13);
 
-
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+</script>
+</section>
+<hr />  
 
 <!-- ini message us Content -->
+<section id="Contact-us">
+    <header class="halaman-bawah">
+        <h1> ayo kirim pesan</h1>
+        <form name="message-form" onSubmit="return validateform(event)">    
+            Nama : <input placeholder="Nama" type="text" name="full-name" />
+            <br />
+
+            Tanggal lahir:
+            <input type="date" name="birth-date" />
+            <br/>
+
+            asal:  : <input placeholder="asal" type="text" name="asal" />
+            <br />
+
+             Jenis Kelamin:
+            <input type="radio" id="male" name="gender" value="Laki-Laki" />
+            <label for="male"> Laki-Laki</label>
+            <input type="radio" id="female" name="gender" value="Perempuan" />
+            <label for="female">Perempuan</label>
+            <br />
+
+            Pesan:
+            <textarea placeholder="Pesan" name="messages"></textarea>
+            <input type="submit" value="submit" />
+        </form>
+
+
+        <div class="hasil">
+            
+            <p> Nama: <span id="sender-full-name"></span></p>
+            <p> Tanggal Lahir: <span id="sender-birth-date"></span></p>
+            <p> Jenis Kelamin: <span id="sender-gender"></span></p>
+            <p> Pesan: <span id="sender-messages"></span></p>
+        </div>
+    </header>
+    <hr />
  </main>
-
-
 
 </body>
 
